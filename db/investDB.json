@@ -1,0 +1,39 @@
+{
+    "SBER": {
+        "2021-05-08": {
+            "ticker": "SBER",
+            "quantity": "30",
+            "total": null
+        }
+    },
+    "FXES": {
+        "2021-09-17": {
+            "ticker": "FXES",
+            "cost": 0.9857,
+            "quantity": "300",
+            "total": 295.71
+        }
+    },
+    "DSKY": {
+        "2020-02-15": {
+            "ticker": "DSKY",
+            "cost": 118.54,
+            "quantity": "100",
+            "total": 11854
+        },
+        "2020-02-22": {
+            "ticker": "DSKY",
+            "cost": 117.92,
+            "quantity": "100",
+            "total": 11792
+        }
+    },
+    "RETA": {
+        "2020-02-28": {
+            "ticker": "RETA",
+            "cost": 201.75,
+            "quantity": "30",
+            "total": 6052.5
+        }
+    }
+}
