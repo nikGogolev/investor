@@ -1,0 +1,1 @@
+export function getTickers(state) { return state.tickers };
