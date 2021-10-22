@@ -25,9 +25,7 @@ function App() {
 		<Provider store={store}>
 			<PersistGate persistor={persistor}>
 				<ThemeProvider theme={mainTheme}>
-					<div className="App">
 						<Router />
-					</div>
 				</ThemeProvider>
 			</PersistGate>
 		</Provider>

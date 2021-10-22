@@ -55,13 +55,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Bonds(props) {
-
 	const dispatch = useDispatch();
 
 	const delTicker = (ticker, marketType) => {
 		dispatch(delTickerWithSaga(ticker, marketType));
 	};
-	
+
 	const classes = useStyles();
 
 	const tickers = Object.keys(props.bonds || {});

@@ -16,13 +16,14 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	table: {
-
+		maxWidth: '100%'
 	},
 	ticker: {
 		display: 'flex',
 		flexDirection: 'row',
 		border: '1px solid black',
-		margin: '10px'
+		margin: '10px',
+		overflow: 'auto'
 	},
 	tickerName:{
 		display: 'flex',
@@ -30,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
 		width: '110px',
 		alignItems: 'center',
 		justifyContent: 'space-around',
-		padding: '5px'
+		padding: '5px',
+		flexShrink: '0'
 	},
 	tickerTable: {
 		display: 'flex',
@@ -60,7 +62,7 @@ function Stocks(props) {
 	const delTicker = (ticker, marketType) => {
 		dispatch(delTickerWithSaga(ticker, marketType));
 	};
-	
+
 	const classes = useStyles();
 
 	const tickers = Object.keys(props.stocks || {});

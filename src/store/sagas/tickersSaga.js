@@ -77,15 +77,3 @@ export const onDelTickerWithSaga = function* (action) {
         console.log(err);
     };
 };
-/*
-export const onRemoveChatWithSaga = function* (action) {
-    try {
-        const chatId = yield ref(db, `chats/${action.chatId}`);
-        const myChat = yield ref(db, `profile/${auth.currentUser.uid}/myChats/${action.chatId}`);
-        yield remove(chatId);
-        yield remove(myChat);
-    } catch (err) {
-        console.log(err);
-    }
-};
-*/

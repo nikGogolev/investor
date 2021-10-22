@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     App: {
-        maxWidth: '1000px',
         margin: '0 auto'
     },
     mainContainer: {
@@ -114,11 +113,17 @@ function Main() {
                 .then(result => result.json())
                 .then((info)=>{
                     if (info.type === 'stock'){
-                        dispatch(addStockTickerWithSaga(ticker, info.description, date, quantity, data.c[0], data.c[0] * quantity));
+                        const cost = data.c[0];
+                        const total = data.c[0] * quantity;
+                        dispatch(addStockTickerWithSaga(ticker, info.description, date, quantity, cost.toFixed(2), total.toFixed(2)));
                     } else if (info.type === 'pif') {
-                        dispatch(addPifsTickerWithSaga(ticker, info.description, date, quantity, data.c[0], data.c[0] * quantity));
+                        const cost = data.c[0];
+                        const total = data.c[0] * quantity;
+                        dispatch(addPifsTickerWithSaga(ticker, info.description, date, quantity, cost.toFixed(2), total.toFixed(2)));
                     } else if (info.type === 'bonds') {
-                        dispatch(addBondsTickerWithSaga(ticker, info.description, date, quantity, data.c[0] * 10, data.c[0] * quantity * 10));
+                        const cost = data.c[0]*10;
+                        const total = data.c[0] * quantity*10;
+                        dispatch(addBondsTickerWithSaga(ticker, info.description, date, quantity, cost.toFixed(2), total.toFixed(2)));
                     } else if (info.type === 'forex') {
                         const cost = data.c[0];
                         const total = data.c[0] * quantity;
