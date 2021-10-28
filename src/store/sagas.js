@@ -1,0 +1,22 @@
+import { takeLatest, takeEvery } from 'redux-saga/effects';
+import { ADD_TICKER_WITH_SAGA } from './actions/addTicker';
+import { AUTOCOMPLETE_TICKER_WITH_SAGA } from './actions/autoComplete';
+import { CALCULATE_PORTFOLIO_COST_WITH_SAGA } from './actions/calculatePortfolioCost';
+import { DEL_TICKER_WITH_SAGA } from './actions/delTicker';
+
+import { INIT_INIT_USER_DATA_WITH_SAGA } from './actions/initUserData';
+import { SET_TICKERS_INFO_WITH_SAGA } from './actions/setTickersInfo';
+import { onCalculatePortfolioCostWithSaga } from './sagas/profileSaga';
+import { onAddTickerWithSaga, onAutoCompleteTickersWithSaga, onDelTickerWithSaga, onSetTickersInfoWithSaga } from './sagas/tickersSaga';
+import { onInitUserDataWithSaga } from './sagas/userDataSaga';
+
+function* mySaga() {
+	yield takeLatest(INIT_INIT_USER_DATA_WITH_SAGA, onInitUserDataWithSaga);
+	yield takeEvery(ADD_TICKER_WITH_SAGA, onAddTickerWithSaga);
+	yield takeLatest(DEL_TICKER_WITH_SAGA, onDelTickerWithSaga);
+	yield takeEvery(AUTOCOMPLETE_TICKER_WITH_SAGA, onAutoCompleteTickersWithSaga);
+	yield takeEvery(SET_TICKERS_INFO_WITH_SAGA, onSetTickersInfoWithSaga);
+	yield takeLatest(CALCULATE_PORTFOLIO_COST_WITH_SAGA, onCalculatePortfolioCostWithSaga);
+};
+
+export default mySaga;
